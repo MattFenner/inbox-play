@@ -5,7 +5,19 @@ import React from "react";
 import Header from "./Header";
 import ToolPanel from "./ToolPanel";
 import TabPanel from "./TabPanel";
-import MailItems from "./MailItems";
+import MailItems, { MailItem } from "./MailItems";
+import { faker } from "@faker-js/faker";
+import _ from "lodash";
+
+const mailItems = _.sortBy(_.range(20)
+  .map((_) => {
+    return {
+      date: faker.date.past(),
+      from: faker.company.companyName(),
+      subject: `There are ${faker.random.number({min:2, max:100})} ${faker.animal.type()}s in your area!`,
+      isRead: faker.random.boolean()  
+    } as MailItem;
+  }), ["date"])
 
 function App() {
   return (
@@ -27,7 +39,7 @@ function App() {
             <TabPanel />
           </Grid>
           <Grid item xs={12}>
-            <MailItems />
+            <MailItems items={mailItems} />
           </Grid>
         </Grid>
       </main>

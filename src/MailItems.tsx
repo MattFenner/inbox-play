@@ -1,41 +1,61 @@
-import React from "react";
+import React from 'react';
 import {
-  Box,
   Checkbox,
   Grid,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
   Paper,
-  Typography,
 } from "@mui/material";
-import RefreshIcon from "@mui/icons-material/Refresh";
+import StarIcon from "@mui/icons-material/Star";
+import StarOutlineIcon from "@mui/icons-material/StarBorderOutlined";
+import moment from "moment";
 
-function MailItem(props: { from: String; subject: String, isRead?: Boolean }) {
-  
-  const typographyProps =  {fontWeight: props.isRead ? "bold" : "normal"} ;
+export interface MailItem {
+  from: string;
+  subject: string;
+  date: Date;
+  isRead?: boolean;
+}
+
+function ListItemPrimary(props: MailItem) {
+  return (
+    <Grid container>
+      <Grid item xs={3}>{props.from}</Grid>
+      <Grid item xs={7}>{props.subject}</Grid>
+      <Grid item xs={2}>{moment(props.date).fromNow()}</Grid>
+    </Grid>
+  );
+}
+
+function MailItem(props: MailItem) {
+  const typographyProps = { fontWeight: props.isRead ? "bold" : "normal" };
   return (
     <ListItem disablePadding>
-      <Checkbox />
+      <Checkbox aria-label="selected"/>
+      <Checkbox aria-label="favorited" checkedIcon={<StarIcon color="warning"/>} icon={<StarOutlineIcon/>} />
       <ListItemButton>
-        <ListItemText primary={props.from} primaryTypographyProps={typographyProps}/>
-        <ListItemText primary={props.subject} primaryTypographyProps={typographyProps}/>
+        <ListItemText
+          primaryTypographyProps={typographyProps}
+          primary={<ListItemPrimary {...props} />}
+        />
       </ListItemButton>
     </ListItem>
   );
 }
 
-export default function MailItems() {
+interface MailItemsProps {
+  items: MailItem[]
+}
+
+export default function MailItems({ items }: MailItemsProps) {
   return (
     <Paper sx={{ marginTop: 2 }}>
       <List>
-        <MailItem from="Someone 1" subject="Mail 1" />
-        <MailItem from="Someone 2" subject="Mail 2" isRead={true} />
-        <MailItem from="Someone 3" subject="Mail 3" isRead={true} />
-        <MailItem from="Someone 4" subject="Mail 4" isRead={true} />
-        <MailItem from="Someone 5" subject="Mail 5" />
+        {items.map(item => 
+          <MailItem key={item.subject} {...item} />
+        )}
       </List>
     </Paper>
   );

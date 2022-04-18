@@ -1,3 +1,4 @@
+import React from 'react';
 import { Paper, Tab, Tabs } from "@mui/material";
 import PrimaryIcon from "@mui/icons-material/Inbox";
 import SocialIcon from "@mui/icons-material/People";
