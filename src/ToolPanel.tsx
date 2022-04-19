@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Box, Checkbox, Grid, IconButton, Typography } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import MoreIcon from "@mui/icons-material/MoreVert";
 
-export default function ToolPanel() {
+interface Props {
+  onSelectAll: () => void
+}
+
+export default function ToolPanel({onSelectAll}: Props) {
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      onSelectAll();
+    }
+  }
+
   return (
     <Box display="flex">
       <Box flexGrow={1} >
-        <Checkbox aria-label="select all" />
+        <Checkbox aria-label="select all" onChange={handleChange} />
         <IconButton aria-label="refresh">
           <RefreshIcon />
         </IconButton>
