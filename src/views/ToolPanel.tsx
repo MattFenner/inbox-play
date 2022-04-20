@@ -1,19 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { Box, Checkbox, Grid, IconButton, Typography } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { MailItemsDispatchContext } from "../state/mailItems";
 
-interface Props {
-  onSelectAll: () => void
-}
+export default function ToolPanel() {
 
-export default function ToolPanel({onSelectAll}: Props) {
+  var mailItemsDispatch = useContext(MailItemsDispatchContext);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) {
-      onSelectAll();
-    }
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
+    mailItemsDispatch({type: "select-all", select: checked});
   }
 
   return (
