@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2ae573a588846636e77c",
+    "revision": "9915b50651cd3031a33a",
     "url": "/inbox-play/static/css/main.b3c38a0e.chunk.css"
   },
   {
-    "revision": "2ae573a588846636e77c",
-    "url": "/inbox-play/static/js/main.2ae573a5.chunk.js"
+    "revision": "9915b50651cd3031a33a",
+    "url": "/inbox-play/static/js/main.9915b506.chunk.js"
   },
   {
     "revision": "925dda96d98ac89208c1",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/inbox-play/static/js/runtime~main.51abbbe0.js"
   },
   {
-    "revision": "f5b81d9f4512c36a1eca3ad4c3723340",
+    "revision": "63f67ba3038ea07c1a547591ede80ade",
     "url": "/inbox-play/index.html"
   }
 ];

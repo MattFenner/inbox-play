@@ -1,7 +1,7 @@
 {
   "main.css": "/inbox-play/static/css/main.b3c38a0e.chunk.css",
-  "main.js": "/inbox-play/static/js/main.2ae573a5.chunk.js",
-  "main.js.map": "/inbox-play/static/js/main.2ae573a5.chunk.js.map",
+  "main.js": "/inbox-play/static/js/main.9915b506.chunk.js",
+  "main.js.map": "/inbox-play/static/js/main.9915b506.chunk.js.map",
   "static/js/1.925dda96.chunk.js": "/inbox-play/static/js/1.925dda96.chunk.js",
   "static/js/1.925dda96.chunk.js.map": "/inbox-play/static/js/1.925dda96.chunk.js.map",
   "static/js/2.6d6cd2cd.chunk.js": "/inbox-play/static/js/2.6d6cd2cd.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/inbox-play/static/js/runtime~main.51abbbe0.js.map",
   "static/css/main.b3c38a0e.chunk.css.map": "/inbox-play/static/css/main.b3c38a0e.chunk.css.map",
   "index.html": "/inbox-play/index.html",
-  "precache-manifest.6d737a9f00f612bd60adb31e069e49f6.js": "/inbox-play/precache-manifest.6d737a9f00f612bd60adb31e069e49f6.js",
+  "precache-manifest.1667915cad15546fde2f90ea54e951d8.js": "/inbox-play/precache-manifest.1667915cad15546fde2f90ea54e951d8.js",
   "service-worker.js": "/inbox-play/service-worker.js"
 }
