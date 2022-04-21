@@ -33,8 +33,7 @@ const initialMailItems: MailItemState[] = _.chain(_.range(50))
       };
     }
   )
-  .sortBy(["date"])
-  .reverse()
+  .orderBy(["date"], ["desc"])
   .value();
 
 function mailItemsReducer(
