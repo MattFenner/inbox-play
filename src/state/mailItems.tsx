@@ -34,6 +34,7 @@ const initialMailItems: MailItemState[] = _.chain(_.range(50))
     }
   )
   .sortBy(["date"])
+  .reverse()
   .value();
 
 function mailItemsReducer(
@@ -55,11 +56,11 @@ function mailItemsReducer(
           return {
             ...item,
             selected: action.select,
-          }
+          };
         } else {
           return item;
         }
-      })
+      });
   }
 }
 
